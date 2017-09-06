@@ -30,6 +30,8 @@
 					font: {
 						color: "#ffffff",
 					},
+					image: '/icingaweb2/img/icons/' + host.icon_image,
+					shape: 'image',
 				});
 			}
 			// create an array with nodes
