@@ -28,6 +28,7 @@ class StatusMap_IndexController extends MonitoringController {
 			'host_name',
 			'host_display_name',
 			'host_state',
+			'host_icon_image',
 		));
 
 		$hosts = $this->hostList->fetch();
@@ -51,6 +52,7 @@ class StatusMap_IndexController extends MonitoringController {
 				'host_name' => $host->host_name,
 				'display_name' => $host->host_display_name,
 				'state' => (int) $host->host_state,
+				'icon_image' => $host->host_icon_image,
 			);
 		}
 		$this->view->data_hosts = json_encode($data_hosts);
