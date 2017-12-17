@@ -5,17 +5,76 @@ This is a very basic status map module for Icingaweb 2.
 ## Installation
 
 To install, check out this repo to your icingaweb2 modules directory:
+
 ```bash
 git clone https://github.com/invliD/icingaweb2-module-statusmap.git /usr/share/icingaweb2/modules/statusmap
 ```
 
 In addition, the monitoring module does not contain an IDO model class and a DataView, so you need to link those files into that module:
+
 ```bash
-ln -s ../../../../../../statusmap/library/Monitoring/Backend/Ido/Query/HostdependencyQuery.php /usr/share/icingaweb2/modules/monitoring/library/Monitoring/Backend/Ido/Query/HostdependencyQuery.php
-ln -s ../../../../statusmap/library/Monitoring/DataView/Hostdependency.php /usr/share/icingaweb2/modules/monitoring/library/Monitoring/DataView/Hostdependency.php
+cd /usr/share/icingaweb2/modules/monitoring/library/Monitoring/Backend/Ido/Query
+ln -s ../../../../../../statusmap/library/Monitoring/Backend/Ido/Query/HostdependencyQuery.php
+
+cd /usr/share/icingaweb2/modules/monitoring/library/Monitoring/DataView
+ln -s ../../../../statusmap/library/Monitoring/DataView/Hostdependency.php
 ```
 
+## Usage
+
+### Apply rule
+
+```
+# /etc/icinga2/conf.d/dependencies.conf
+
+apply Dependency "depend-host-parent_host" to Host {
+    parent_host_name = host.vars.parent_host
+
+    assign where host.vars.parent_host
+}
+```
+
+### Icinga Web 2 Module Director
+
+1. Add data field
+
+- Field name: `parent_host`
+- Caption: `parent_host`
+- Description:
+- Data type: `DirectorObject`
+- Object: `Hosts`
+- Target data type: `String`
+
+![Icinga Director - Add data field](doc/screenshot/director/add_data_field.png)
+
+2. Add field to host template
+
+![Icinga Director - Host template fields](doc/screenshot/director/template_host_fields.png)
+
+3. Set host property `parent_host`
+
+![Icinga Director - Host properties](doc/screenshot/director/host_properties.png)
+
+### Example
+
+```
+localhost
+└── outlier
+    ├── firewall
+    │   ├── cable-gw
+    │   │   └── isp-2
+    │   ├── dsl-gw
+    │   │   └── isp-1
+    │   └── wlan
+    │       ├── blackberry
+    │       └── iphone
+    └── tv
+```
+
+![Statusmap example](doc/screenshot/statusmap/example.png)
+
 ## Contributing
+
 If you want to contribute to this project:
 
 - Fork the repository
@@ -23,4 +82,5 @@ If you want to contribute to this project:
 - Submit a Pull Request
 
 ## License
+
 This project is licensed under the GNU GPLv2. See COPYING.md for the full license text.
