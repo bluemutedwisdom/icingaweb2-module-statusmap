@@ -1,4 +1,4 @@
 Name: Statusmap
-Version: master
+Version: wols/master
 Depends: monitoring
 Description: Statusmap - A basic host status map
