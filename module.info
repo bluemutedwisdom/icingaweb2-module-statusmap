@@ -1,0 +1,4 @@
+Name: Statusmap
+Version: 0.0.1
+Depends: monitoring
+Description: Statusmap - A basic host status map
