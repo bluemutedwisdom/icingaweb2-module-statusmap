@@ -58,17 +58,17 @@ apply Dependency "depend-host-parent_host" to Host {
 ### Example
 
 ```
-localhost
-└── outlier
-    ├── firewall
-    │   ├── cable-gw
-    │   │   └── isp-2
-    │   ├── dsl-gw
-    │   │   └── isp-1
-    │   └── wlan
-    │       ├── blackberry
-    │       └── iphone
-    └── tv
+localhost                   UP
+└── outlier                 UP
+    ├── firewall            UP
+    │   ├── cable-gw        UP
+    │   │   └── isp-2       UP
+    │   ├── dsl-gw          UP
+    │   │   └── isp-1       UP
+    │   └── wlan            DOWN
+    │       ├── blackberry  UNREACHABLE
+    │       └── iphone      UNREACHABLE
+    └── tv                  UP
 ```
 
 ![Statusmap example](doc/screenshot/statusmap/example.png)
