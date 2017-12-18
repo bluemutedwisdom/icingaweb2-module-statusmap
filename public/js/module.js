@@ -26,12 +26,19 @@
                 node_data.push({
                     id: host.host_name,
                     label: host.display_name,
-                    color: this.stateToColor(host.state),
                     font: {
-                        color: "#000000",
+                        color: '#000000',
                     },
                     image: '/icingaweb2/img/icons/' + host.icon_image,
                     shape: 'image',
+                    shapeProperties: {
+                        useBorderWithImage: true
+                    },
+                    borderWidth: 5,
+                    color: {
+                        border: this.stateToColor(host.state),
+                        background: '#ffffff'
+                    }
                 });
             }
             // create an array with nodes
