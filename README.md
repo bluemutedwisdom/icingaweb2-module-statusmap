@@ -73,13 +73,13 @@ localhost                   UP
     └── tv                  UP
 ```
 
-![Statusmap example](doc/screenshot/statusmap/example.png)
+![Statusmap example #1](doc/screenshot/statusmap/example.png)
 
 #### Example 2
 
-Only any `icon_image`.
+Only any `icon_image` are set.
 
-![Statusmap example](doc/screenshot/statusmap/example_2.png)
+![Statusmap example #2](doc/screenshot/statusmap/example_2.png)
 
 ## Contributing
 
@@ -91,4 +91,4 @@ If you want to contribute to this project:
 
 ## License
 
-This project is licensed under the GNU GPLv2. See COPYING.md for the full license text.
+This project is licensed under the GNU GPLv2. See [COPYING](COPYING.md) for the full license text.
