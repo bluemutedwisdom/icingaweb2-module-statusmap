@@ -55,7 +55,9 @@ apply Dependency "depend-host-parent_host" to Host {
 
 ![Icinga Director - Host properties](doc/screenshot/director/host_properties.png)
 
-### Example
+### Examples
+
+#### Example 1
 
 ```
 localhost                   UP
@@ -72,6 +74,12 @@ localhost                   UP
 ```
 
 ![Statusmap example](doc/screenshot/statusmap/example.png)
+
+#### Example 2
+
+Only any `icon_image`.
+
+![Statusmap example](doc/screenshot/statusmap/example_2.png)
 
 ## Contributing
 
