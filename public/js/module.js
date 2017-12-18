@@ -67,7 +67,7 @@
 
             // https://github.com/almende/vis/issues/1589
             // felixhayashi commented on 21 Jan 2016
-            network.on('click', function(properties) {
+            network.on('doubleClick', function(properties) {
                 if(!properties.nodes.length) return;
 
                 var node = nodes.get(properties.nodes[0]);
