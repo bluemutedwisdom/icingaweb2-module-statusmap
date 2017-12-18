@@ -26,9 +26,7 @@
                 node_data.push({
                     id: host.host_name,
                     label: host.display_name,
-                    font: {
-                        color: '#000000',
-                    },
+                    url: 'monitoring/host/show?host=' + host.host_name,
                     image: '/icingaweb2/img/icons/' + host.icon_image,
                     shape: 'image',
                     shapeProperties: {
@@ -38,6 +36,9 @@
                     color: {
                         border: this.stateToColor(host.state),
                         background: '#ffffff'
+                    },
+                    font: {
+                        color: '#000000',
                     }
                 });
             }
@@ -63,6 +64,15 @@
             };
             var options = {};
             var network = new vis.Network(container.get(0), data, options);
+
+            // https://github.com/almende/vis/issues/1589
+            // felixhayashi commented on 21 Jan 2016
+            network.on('click', function(properties) {
+                if(!properties.nodes.length) return;
+
+                var node = nodes.get(properties.nodes[0]);
+                window.open(node.url, "_blank");
+            });
         },
 
         stateToColor: function(state) {
