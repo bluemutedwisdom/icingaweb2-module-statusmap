@@ -11,7 +11,7 @@ Only any `icon_image` are set.
 To install, check out this repo to your icingaweb2 modules directory:
 
 ```bash
-git clone https://github.com/invliD/icingaweb2-module-statusmap.git /usr/share/icingaweb2/modules/statusmap
+git clone https://github.com/wols/icingaweb2-module-statusmap.git /usr/share/icingaweb2/modules/statusmap
 ```
 
 In addition, the monitoring module does not contain an IDO model class and a DataView, so you need to link those files into that module:
