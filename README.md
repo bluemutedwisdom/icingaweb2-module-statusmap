@@ -1,6 +1,10 @@
 # icingaweb2-module-statusmap
 
-This is a very basic status map module for Icingaweb 2.
+This is a host status map module for Icingaweb 2.
+
+![Statusmap example #2](doc/screenshot/statusmap/example_2.png)
+
+Only any `icon_image` are set.
 
 ## Installation
 
@@ -55,9 +59,7 @@ apply Dependency "depend-host-parent_host" to Host {
 
 ![Icinga Director - Host properties](doc/screenshot/director/host_properties.png)
 
-### Examples
-
-#### Example 1
+### Example
 
 ```
 localhost                   UP
@@ -73,13 +75,7 @@ localhost                   UP
     └── tv                  UP
 ```
 
-![Statusmap example #1](doc/screenshot/statusmap/example.png)
-
-#### Example 2
-
-Only any `icon_image` are set.
-
-![Statusmap example #2](doc/screenshot/statusmap/example_2.png)
+![Statusmap example](doc/screenshot/statusmap/example.png)
 
 ## Contributing
 
